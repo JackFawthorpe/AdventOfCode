@@ -1,5 +1,7 @@
-use std::fs;
+#[path = "year_2023/day_1_trebuchet.rs"]
+pub mod problem;
 
+use std::fs;
 static INPUT_PATH: &str = "./input.txt";
 static OUTPUT_PATH: &str = "./output.txt";
 
@@ -16,7 +18,7 @@ fn save_output(contents: String) -> Result<(), std::io::Error> {
 
 fn run() -> Result<(), std::io::Error> {
     let input: String = get_input()?;
-    let output: String = input;
+    let output: String = problem::solve(input);
     save_output(output)?;
     Ok(())
 }
