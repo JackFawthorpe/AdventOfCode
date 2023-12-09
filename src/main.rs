@@ -1,19 +1,29 @@
-use std::{fs::{self}, io};
+use std::fs;
 
 static INPUT_PATH: &str = "./input.txt";
+static OUTPUT_PATH: &str = "./output.txt";
 
-fn main() {
-    match get_input() {
-        Ok(input) => {solve(input)},
-        Err(error) => eprintln!("Couldn't open input file: {}", error),
-    }
-}
-
-fn get_input() -> Result<String, io::Error> {
+fn get_input() -> Result<String, std::io::Error> {
     let input: String = fs::read_to_string(INPUT_PATH)?;
     Ok(input)
 }
 
-fn solve(input: String) {
-    println!("Received input {}", input);
+fn save_output(contents: String) -> Result<(), std::io::Error> {
+    fs::write(OUTPUT_PATH, contents)?;
+    Ok(())
+}
+
+
+fn run() -> Result<(), std::io::Error> {
+    let input: String = get_input()?;
+    let output: String = input;
+    save_output(output)?;
+    Ok(())
+}
+
+fn main() {
+    match run() {
+        Err(err) => println!("Failed to solve: {}", err),
+        Ok(_) => println!("Solved, exitting successfully"),
+    }
 }
