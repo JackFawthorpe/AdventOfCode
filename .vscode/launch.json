@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'AdventOfCode'",
+            "name": "Debug executable 'advent_of_code'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=AdventOfCode",
-                    "--package=AdventOfCode"
+                    "--bin=advent_of_code",
+                    "--package=advent_of_code"
                 ],
                 "filter": {
-                    "name": "AdventOfCode",
+                    "name": "advent_of_code",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'AdventOfCode'",
+            "name": "Debug unit tests in executable 'advent_of_code'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=AdventOfCode",
-                    "--package=AdventOfCode"
+                    "--bin=advent_of_code",
+                    "--package=advent_of_code"
                 ],
                 "filter": {
-                    "name": "AdventOfCode",
+                    "name": "advent_of_code",
                     "kind": "bin"
                 }
             },
