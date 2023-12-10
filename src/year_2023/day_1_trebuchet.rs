@@ -1,6 +1,7 @@
 extern crate regex;
 
 use regex::Regex;
+use crate::utils::string_utils;
 
 pub fn solve(input: String) -> String {
     return second_star(input);
@@ -84,8 +85,7 @@ fn process_line(input: &str) -> u32 {
 // Second star involves taking a list of strings that include numbers (1 or one) (1-9) and summing the results
 fn second_star(input: String) -> String {
     let mut sum: u32 = 0;
-    let lines = input.split("\r\n");
-    for (index, line) in lines.enumerate() {
+    for (index, line) in string_utils::get_lines(&input).iter().enumerate() {
         let result: u32 = process_line(line);
         println!("Result for line {} is {}", index, result);
         sum += result;
@@ -99,12 +99,10 @@ fn second_star(input: String) -> String {
 #[allow(dead_code)]
 fn first_star(input: String) -> String {
     let mut sum: u32 = 0;
-    let lines = input.split('\n');
-    for line in lines {
+    for line in string_utils::get_lines(&input) {
         let digits: Vec<u32> = get_digits(line);
         sum += digits[0] * 10 + digits[digits.len() - 1];
     }
-        
     return sum.to_string();
 }
 
