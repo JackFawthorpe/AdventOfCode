@@ -1,7 +1,5 @@
-#[path = "year_2023/day_2_cube_conundrum.rs"]
+#[path = "year_2023/day_3_gear_ratios.rs"]
 pub mod problem;
-
-mod utils;
 
 use std::fs;
 static INPUT_PATH: &str = "./input.txt";

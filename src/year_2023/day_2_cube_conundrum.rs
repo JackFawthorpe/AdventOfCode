@@ -1,5 +1,3 @@
-use crate::utils::string_utils::get_lines;
-
 // Struct to represent what is pulled out of a bag
 struct Bag {
     red: u32,
@@ -35,7 +33,7 @@ fn init_bag() -> Bag {
 }
 
 pub fn solve(input: String) -> String {
-    return second_star(&get_lines(&input)).to_string();
+    return second_star(&mut input.lines().collect()).to_string();
 }
 
 // Sums the products of the smallest possible bags of each game
