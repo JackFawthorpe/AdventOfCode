@@ -1,4 +1,4 @@
-#[path = "year_2023/day_4_scratchcards.rs"]
+#[path = "year_2023/day_5_seed_and_fertilizer.rs"]
 pub mod problem;
 
 use std::fs;
